@@ -30,10 +30,6 @@ Use these Cloudflare Pages settings:
 
 ## Zoho Form Embed
 
-The homepage includes this placeholder in `src/pages/index.astro`:
+The homepage includes the public Zoho Form iframe in `src/pages/index.astro`.
 
-```html
-<!-- PASTE ZOHO FORM IFRAME HERE -->
-```
-
-Paste the public Zoho Form iframe there when it is ready. Do not commit Zoho account credentials, private API keys, customer exports, or sensitive lead data.
+Do not commit Zoho account credentials, private API keys, customer exports, or sensitive lead data.
