@@ -1,19 +1,21 @@
 ---
 title: 'TIME Internet Promo Malaysia 2026'
-description: 'A practical guide to comparing TIME Internet Malaysia promo offers, plan speeds, installation notes, and referral assistance steps in 2026.'
-pubDate: 2026-01-08
+description: 'Latest TIME Internet Malaysia promo and referral summary for new sign-ups, including the RM50 referral bill discount and 600Mbps RM99 offer.'
+pubDate: 2026-05-20
 ---
 
-TIME Internet is a popular fibre broadband choice for many high-rise homes in Malaysia, especially condos and apartments where the building is already TIME-ready. Before choosing a plan, compare the effective monthly price, contract period, installation requirements, router details, and any limited-time promo terms.
+TIME Internet is currently promoting selected Fibre Home plans for new subscribers in Malaysia. If you are signing up through referral assistance, the key item to check is whether your building is covered and whether your registration follows TIME's referral rules.
 
-## What to check before applying
+## Current referral discount
 
-Start with your building name, full condo address, preferred installation timing, and current broadband contract status. Coverage can differ between buildings in the same area, so the building name is often more useful than the street name alone.
+TIME's Hook Up & Earn customer referral programme states that the new customer, or referee, can receive RM50 as a one-time bill discount after successful activation of TIME Fibre Home. The existing TIME customer who refers them may receive RM100 as a bill discount.
 
-## Promo details can change
+## Current 600Mbps promotion
 
-Promotions, prices, free months, device bundles, and installation terms may change over time. Treat this blog as general guidance and confirm all official details with TIME Internet Malaysia before submitting an application.
+TIME's home FAQ lists a new subscriber promotion for the 600Mbps plan at RM99/month for the first 6 full months on a 24-month contract. The FAQ states that this promotion is valid from 3 July 2025 to 1 June 2026, after which the monthly fee reverts to RM139.
 
-## Referral assistance
+## What to prepare
 
-An independent referral assistant can help you prepare the right information, check whether your condo is likely covered, and guide you toward the official application flow. Never share private passwords, banking details, or account login credentials through a referral form.
+Prepare your condo name, full address, tower or block name, contact details, and preferred installation timing. Coverage can differ between buildings in the same area, so the building name is often more useful than the street name alone.
+
+Promotions, prices, eligibility, and installation details can change. Always confirm final plan details with TIME directly before submitting an official application.
