@@ -1,105 +1,48 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-
-const title = 'TIME Internet Promo & Referral Assistance Malaysia';
+const title = 'TIME Internet Promo & Referral Sign Up Malaysia';
 const description =
-  'Independent referral assistance for Malaysians checking TIME Internet condo coverage, promos, installation basics, and application next steps.';
+  'Sign up for TIME Internet Malaysia referral assistance. New customers may receive an RM50 referral bill discount after successful activation, subject to TIME terms.';
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="hero">
-    <div class="wrap hero-content">
-      <h1>TIME Internet Promo & Referral Assistance Malaysia</h1>
+  <section class="signup" id="apply">
+    <div class="signup-copy">
+      <p class="eyebrow">TIME Internet Malaysia referral assistance</p>
+      <h1>Sign up for TIME Internet promo help</h1>
       <p class="lead">
-        Get practical help checking condo coverage, comparing fibre plans, and preparing your TIME Internet application through an independent referral assistance page.
+        Fill in the form and we will help check your condo coverage and guide your TIME Fibre Home sign-up.
       </p>
-      <div class="button-row">
-        <a class="button" href="#apply">Request Referral Help</a>
-        <a class="button secondary" href="/blog/">Read Guides</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="wrap grid">
-      <article class="card">
-        <h2>Coverage Checks</h2>
-        <p>
-          Condo and apartment eligibility can vary by building. Share your building name and area so coverage can be checked before you apply.
-        </p>
-      </article>
-      <article class="card">
-        <h2>Promo Guidance</h2>
-        <p>
-          Learn how to compare current TIME Internet offers, contract terms, installation notes, and plan speeds in plain language.
-        </p>
-      </article>
-      <article class="card">
-        <h2>Referral Support</h2>
-        <p>
-          Use the form below to request referral assistance and receive follow-up on the next steps for your address.
-        </p>
-      </article>
-    </div>
-  </section>
+      <ul class="promo-list" aria-label="Current TIME Internet promotion summary">
+        <li>New sign-ups using a valid TIME referral may receive an RM50 one-time bill discount after successful activation.</li>
+        <li>TIME currently lists 600Mbps at RM99/month for the first 6 full months on a 24-month contract, valid until 1 June 2026.</li>
+        <li>Official TIME terms, coverage, installation availability, and plan pricing still apply.</li>
+      </ul>
 
-  <section class="section alt" id="coverage-help">
-    <div class="wrap">
-      <h2>Built for condo users comparing fibre broadband</h2>
-      <p>
-        TIME Internet is commonly available in high-rise residential buildings in Malaysia, but coverage still depends on building readiness. This site helps you understand what to prepare before checking coverage or applying.
+      <p class="disclaimer">
+        Independent referral assistance page. This is not the official TIME website.
       </p>
-      <div class="notice">
-        <strong>Disclaimer:</strong> This is an independent referral assistance page and is not the official TIME website. For official plan details, pricing, promotions, terms, and coverage confirmation, always refer to TIME Internet Malaysia directly.
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="apply">
-    <div class="wrap">
-      <h2>Request TIME Internet referral assistance</h2>
-      <p>
-        Submit the form below to request referral assistance. Do not add Zoho login credentials, private API keys, or customer data to this codebase.
+      <p class="source-note">
+        Sources:
+        <a href="https://www.time.com.my/terms-and-conditions/promotions/" rel="nofollow">TIME promotions terms</a>
+        and
+        <a href="https://www.time.com.my/support/for-home/faq?faq=home" rel="nofollow">TIME Home FAQ</a>.
       </p>
-      <div class="form-shell">
-        <iframe
-          aria-label="TIME Internet Promo & Referral Sign up Form"
-          frameborder="0"
-          style="height:500px;width:99%;border:none;"
-          src="https://forms.zohopublic.com/supportgamere1/form/TimeInternetPromoSignupForm/formperma/cDIMWNLjVjq9FVSwJjXm7PHGM0clvWVlTJ9sF4ksBfw"
-        >
-        </iframe>
-      </div>
     </div>
-  </section>
 
-  <section class="section alt">
-    <div class="wrap">
-      <h2>Latest TIME Internet guides</h2>
-      <div class="article-list">
-        {
-          posts.map((post) => (
-            <article class="card">
-              <a href={`/blog/${post.slug}/`}>
-                <h3>{post.data.title}</h3>
-                <p>{post.data.description}</p>
-                <p class="article-meta">
-                  {post.data.pubDate.toLocaleDateString('en-MY', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                </p>
-              </a>
-            </article>
-          ))
-        }
-      </div>
+    <div class="form-shell">
+      <h2>Submit your details</h2>
+      <p>Use the form below to request referral assistance.</p>
+      <iframe
+        aria-label="TIME Internet Promo & Referral Sign up Form"
+        frameborder="0"
+        style="height:500px;width:99%;border:none;"
+        src="https://forms.zohopublic.com/supportgamere1/form/TimeInternetPromoSignupForm/formperma/cDIMWNLjVjq9FVSwJjXm7PHGM0clvWVlTJ9sF4ksBfw"
+      >
+      </iframe>
     </div>
   </section>
 </BaseLayout>
