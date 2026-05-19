@@ -3,12 +3,14 @@ interface Props {
   title: string;
   description: string;
   canonical?: string;
+  hideHeader?: boolean;
 }
 
 const {
   title,
   description,
   canonical = Astro.url.href,
+  hideHeader = false,
 } = Astro.props;
 
 const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
@@ -32,13 +34,17 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
     <meta name="twitter:description" content={description} />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Homepage">TIME Referral Help</a>
-      <nav aria-label="Primary navigation">
-        <a href="/#apply">Sign Up</a>
-        <a href="/blog/">Guides</a>
-      </nav>
-    </header>
+    {
+      !hideHeader && (
+        <header class="site-header">
+          <a class="brand" href="/" aria-label="Homepage">TIME Referral Help</a>
+          <nav aria-label="Primary navigation">
+            <a href="/#apply">Sign Up</a>
+            <a href="/blog/">Guides</a>
+          </nav>
+        </header>
+      )
+    }
     <main>
       <slot />
     </main>
@@ -133,6 +139,12 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
     align-items: start;
   }
 
+  .signup.form-only {
+    display: block;
+    width: min(100% - 24px, 720px);
+    padding: 16px 0 28px;
+  }
+
   .signup-copy {
     padding-top: 12px;
   }
@@ -178,7 +190,7 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
   .promo-list {
     display: grid;
     gap: 10px;
-    margin: 28px 0;
+    margin: 0 0 18px;
     padding: 0;
     list-style: none;
   }
@@ -259,7 +271,7 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
     border: 1px solid var(--line);
     border-radius: 8px;
     background: #fff;
-    padding: 20px;
+    padding: 18px;
     box-shadow: 0 18px 44px rgba(21, 26, 31, 0.08);
   }
 
