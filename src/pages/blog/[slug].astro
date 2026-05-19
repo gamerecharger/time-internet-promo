@@ -29,5 +29,10 @@ const canonical = new URL(`/blog/${post.slug}/`, Astro.site).href;
     <h1>{post.data.title}</h1>
     <p class="article-meta">{post.data.description}</p>
     <Content />
+    <div class="article-cta">
+      <h2>Ready to check your TIME promo?</h2>
+      <p>Use the referral assistance form to check condo coverage and request sign-up help.</p>
+      <a class="button" href="/#apply">Go to sign-up form</a>
+    </div>
   </article>
 </BaseLayout>
