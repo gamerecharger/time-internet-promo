@@ -35,10 +35,8 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
     <header class="site-header">
       <a class="brand" href="/" aria-label="Homepage">TIME Referral Help</a>
       <nav aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="/blog/">Blog</a>
-        <a href="/#coverage-help">Coverage Help</a>
-        <a href="/#apply">Apply</a>
+        <a href="/#apply">Sign Up</a>
+        <a href="/blog/">Guides</a>
       </nav>
     </header>
     <main>
@@ -55,15 +53,15 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
 <style is:global>
   :root {
     color-scheme: light;
-    --ink: #172026;
-    --muted: #5b6670;
-    --line: #d8e0e5;
+    --ink: #151a1f;
+    --muted: #59636c;
+    --line: #dfe5e8;
     --paper: #ffffff;
-    --soft: #f4f7f8;
+    --soft: #f7f9f9;
     --accent: #0b7a75;
     --accent-dark: #075c58;
-    --warm: #f2b84b;
-    --max: 1120px;
+    --warm: #e8b03e;
+    --max: 1040px;
     font-family:
       Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       sans-serif;
@@ -75,7 +73,7 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
 
   body {
     margin: 0;
-    background: var(--paper);
+    background: var(--soft);
     color: var(--ink);
     line-height: 1.6;
   }
@@ -91,7 +89,7 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
     gap: 24px;
     width: min(100% - 32px, var(--max));
     margin: 0 auto;
-    padding: 18px 0;
+    padding: 16px 0;
   }
 
   .brand {
@@ -104,8 +102,8 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 14px;
-    font-size: 0.95rem;
+    gap: 18px;
+    font-size: 0.92rem;
   }
 
   nav a {
@@ -130,18 +128,18 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
     margin: 0 auto;
   }
 
-  .hero {
-    background:
-      linear-gradient(120deg, rgba(11, 122, 117, 0.92), rgba(23, 32, 38, 0.9)),
-      url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80");
-    background-position: center;
-    background-size: cover;
-    color: #fff;
-    padding: 96px 0 84px;
+  .signup {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1.14fr);
+    gap: 32px;
+    width: min(100% - 32px, var(--max));
+    margin: 0 auto;
+    padding: 42px 0 56px;
+    align-items: start;
   }
 
-  .hero-content {
-    width: min(760px, 100%);
+  .signup-copy {
+    padding-top: 12px;
   }
 
   h1,
@@ -153,11 +151,11 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
   }
 
   h1 {
-    font-size: clamp(2.35rem, 6vw, 4.7rem);
+    font-size: clamp(2rem, 5vw, 3.65rem);
   }
 
   h2 {
-    font-size: clamp(1.85rem, 4vw, 3rem);
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
   }
 
   h3 {
@@ -169,9 +167,41 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
   }
 
   .lead {
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 1.18rem;
-    max-width: 680px;
+    color: var(--muted);
+    font-size: 1.08rem;
+    max-width: 620px;
+  }
+
+  .eyebrow {
+    color: var(--accent-dark);
+    font-size: 0.86rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .promo-list {
+    display: grid;
+    gap: 10px;
+    margin: 28px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .promo-list li {
+    border-left: 4px solid var(--accent);
+    background: var(--paper);
+    padding: 12px 14px;
+  }
+
+  .disclaimer,
+  .source-note {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .source-note a {
+    color: var(--muted);
   }
 
   .button-row {
@@ -231,10 +261,11 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
   }
 
   .form-shell {
-    border: 1px dashed #8ba3ad;
+    border: 1px solid var(--line);
     border-radius: 8px;
     background: #fff;
-    padding: 28px;
+    padding: 20px;
+    box-shadow: 0 18px 44px rgba(21, 26, 31, 0.08);
   }
 
   .placeholder {
@@ -281,8 +312,8 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
 
   @media (max-width: 760px) {
     .site-header {
-      align-items: flex-start;
-      flex-direction: column;
+      align-items: center;
+      flex-direction: row;
       gap: 12px;
     }
 
@@ -290,16 +321,14 @@ const siteName = 'TIME Internet Promo & Referral Assistance Malaysia';
       justify-content: flex-start;
     }
 
-    .section {
-      padding: 52px 0;
-    }
-
-    .hero {
-      padding: 72px 0 64px;
-    }
-
-    .grid {
+    .signup {
       grid-template-columns: 1fr;
+      gap: 22px;
+      padding: 28px 0 40px;
+    }
+
+    .signup-copy {
+      padding-top: 0;
     }
   }
 </style>
