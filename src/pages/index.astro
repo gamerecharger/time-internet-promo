@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const title = 'TIME Internet Promo & Referral Assistance Malaysia';
+const description =
+  'Independent referral assistance for Malaysians checking TIME Internet condo coverage, promos, installation basics, and application next steps.';
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="hero">
+    <div class="wrap hero-content">
+      <h1>TIME Internet Promo & Referral Assistance Malaysia</h1>
+      <p class="lead">
+        Get practical help checking condo coverage, comparing fibre plans, and preparing your TIME Internet application through an independent referral assistance page.
+      </p>
+      <div class="button-row">
+        <a class="button" href="#apply">Request Referral Help</a>
+        <a class="button secondary" href="/blog/">Read Guides</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid">
+      <article class="card">
+        <h2>Coverage Checks</h2>
+        <p>
+          Condo and apartment eligibility can vary by building. Share your building name and area so coverage can be checked before you apply.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Promo Guidance</h2>
+        <p>
+          Learn how to compare current TIME Internet offers, contract terms, installation notes, and plan speeds in plain language.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Referral Support</h2>
+        <p>
+          Use the form below to request referral assistance and receive follow-up on the next steps for your address.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt" id="coverage-help">
+    <div class="wrap">
+      <h2>Built for condo users comparing fibre broadband</h2>
+      <p>
+        TIME Internet is commonly available in high-rise residential buildings in Malaysia, but coverage still depends on building readiness. This site helps you understand what to prepare before checking coverage or applying.
+      </p>
+      <div class="notice">
+        <strong>Disclaimer:</strong> This is an independent referral assistance page and is not the official TIME website. For official plan details, pricing, promotions, terms, and coverage confirmation, always refer to TIME Internet Malaysia directly.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="apply">
+    <div class="wrap">
+      <h2>Request TIME Internet referral assistance</h2>
+      <p>
+        Replace the placeholder below with your Zoho Form iframe when the form is ready. Do not add Zoho login credentials, private API keys, or customer data to this codebase.
+      </p>
+      <div class="form-shell">
+        <!-- PASTE ZOHO FORM IFRAME HERE -->
+        <div class="placeholder">
+          <p>Zoho Form embed placeholder</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <h2>Latest TIME Internet guides</h2>
+      <div class="article-list">
+        {
+          posts.map((post) => (
+            <article class="card">
+              <a href={`/blog/${post.slug}/`}>
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+                <p class="article-meta">
+                  {post.data.pubDate.toLocaleDateString('en-MY', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </p>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
