@@ -15,9 +15,29 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const title = `${post.data.title} | TIME Internet Malaysia Guide`;
 const canonical = new URL(`/blog/${post.slug}/`, Astro.site).href;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: post.data.pubDate.toISOString(),
+  inLanguage: 'en-MY',
+  mainEntityOfPage: canonical,
+  author: {
+    '@type': 'Organization',
+    name: 'TIME Internet Promo & Referral Assistance Malaysia',
+    url: new URL('/', Astro.site).href,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'TIME Internet Promo & Referral Assistance Malaysia',
+    url: new URL('/', Astro.site).href,
+  },
+};
 ---
 
-<BaseLayout title={title} description={post.data.description} canonical={canonical}>
+<BaseLayout title={title} description={post.data.description} canonical={canonical} structuredData={structuredData}>
   <article class="article">
     <p class="article-meta">
       {post.data.pubDate.toLocaleDateString('en-MY', {
