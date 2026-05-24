@@ -4,9 +4,81 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const title = 'Sign up for TIME Internet with promotion discount';
 const description =
   'Sign up for TIME Internet Malaysia referral assistance. New customers may receive a -RM50 referral bill discount after successful activation, subject to TIME terms.';
+
+const canonical = new URL('/', Astro.site).href;
+const lastChecked = '24 May 2026';
+const faqs = [
+  {
+    question: 'What TIME Internet referral promotion is available for new sign-ups?',
+    answer:
+      'TIME states that eligible referred new Fibre Home subscribers can receive a RM50 one-time bill discount after successful service activation.',
+  },
+  {
+    question: 'What is the current TIME 600Mbps promotion?',
+    answer:
+      'TIME currently lists 600Mbps at RM99/month for the first 6 full months on a 24-month contract, valid until 1 June 2026. Final eligibility, coverage, and pricing are subject to TIME terms.',
+  },
+  {
+    question: 'Who is this page for?',
+    answer:
+      'This page is for Malaysia condo, apartment, and high-rise residents who want referral assistance before signing up for TIME Fibre Home.',
+  },
+  {
+    question: 'What happens after submitting the form?',
+    answer:
+      'Your details are used for TIME Internet referral or application follow-up. TIME may contact you by phone or email about your sign-up.',
+  },
+];
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'TIME Internet Promo & Referral Assistance Malaysia',
+    url: canonical,
+    inLanguage: 'en-MY',
+    description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'TIME Internet referral assistance Malaysia',
+    serviceType: 'Internet service referral assistance',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Malaysia',
+    },
+    provider: {
+      '@type': 'Organization',
+      name: 'TIME Internet Promo & Referral Assistance Malaysia',
+      url: canonical,
+    },
+    offers: {
+      '@type': 'Offer',
+      name: 'TIME Fibre Home referral assistance with RM50 referee bill discount',
+      priceCurrency: 'MYR',
+      description:
+        'Eligible new TIME Fibre Home subscribers using a valid referral may receive a RM50 one-time bill discount after successful activation.',
+      availability: 'https://schema.org/InStock',
+      validThrough: '2026-06-01',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  },
+];
 ---
 
-<BaseLayout title={title} description={description} hideHeader>
+<BaseLayout title={title} description={description} canonical={canonical} hideHeader structuredData={structuredData}>
   <section class="signup form-only" id="apply">
     <div class="form-shell">
       <h1>TIME Internet limited promotion for referred customers</h1>
@@ -27,6 +99,26 @@ const description =
       <p class="privacy-link">
         <a href="/privacy/">Privacy Notice</a>
       </p>
+
+      <section class="seo-support" aria-labelledby="time-internet-promo-faq">
+        <h2 id="time-internet-promo-faq">TIME Internet promo and referral FAQ</h2>
+        <p class="source-note">Last checked against public TIME information on {lastChecked}.</p>
+        <div class="faq-list">
+          {
+            faqs.map((faq) => (
+              <details>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))
+          }
+        </div>
+        <p class="source-note">
+          Useful guides: <a href="/blog/time-internet-promo-malaysia-2026/">TIME Internet Promo Malaysia 2026</a>,{' '}
+          <a href="/blog/check-time-internet-coverage-condo/">coverage checks for condos</a>, and{' '}
+          <a href="/blog/time-internet-vs-unifi-condo-users/">TIME Internet vs Unifi for condo users</a>.
+        </p>
+      </section>
     </div>
   </section>
 </BaseLayout>
