@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://timeinternetpromo.my/sitemap-index.xml
+Host: https://timeinternetpromo.my
